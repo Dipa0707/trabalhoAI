@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatura | Warrefugee</title>
+    <link rel="icon" type="image/jpg" href="icon.jpg">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #2c8fb5;
+            --accent-color: #ff6b6b;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --success-color: #4CAF50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.9), rgba(44, 143, 181, 0.9)),
+                        url('icon.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            width: 100%;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 2rem;
+            bottom: 1rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--success-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .info-box {
+            background-color: rgba(44, 143, 181, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #333, #222);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">
+            ← Voltar
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>Candidatura para Ajuda Humanitária</h1>
+        
+        <div class="info-box">
+            <p>Por favor, preencha todos os campos com informações precisas para podermos avaliar sua situação e fornecer a ajuda necessária.</p>
+        </div>
+
+        <form id="candidatura-form">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="localizacao">Localização Atual</label>
+                <input type="text" id="localizacao" required>
+            </div>
+
+            <div class="form-group">
+                <label for="situacao">Situação</label>
+                <select id="situacao" required>
+                    <option value="">Selecione sua situação</option>
+                    <option value="refugiado">Refugiado</option>
+                    <option value="deslocado">Deslocado Interno</option>
+                    <option value="vitima">Vítima de Conflito</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo-ajuda">Tipo de Ajuda Necessária</label>
+                <select id="tipo-ajuda" required>
+                    <option value="">Selecione o tipo de ajuda</option>
+                    <option value="abrigo">Abrigo</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="medica">Assistência Médica</option>
+                    <option value="educacao">Educação</option>
+                    <option value="multiplo">Múltiplas Necessidades</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descreva sua Situação</label>
+                <textarea id="descricao" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="membros">Número de Membros na Família</label>
+                <input type="number" id="membros" min="1" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Candidatura</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Warrefugee. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('candidatura-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Sua candidatura foi enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+</html> 
